@@ -29,13 +29,12 @@ export default function Dashboard() {
       <AppBar
         position="absolute"
       >
-        <Toolbar className={classes.toolbar}>
+        <Toolbar>
           <Typography
             component="h1"
             variant="h6"
             color="inherit"
             noWrap
-            className={classes.title}
           >
             Dashboard
           </Typography>
