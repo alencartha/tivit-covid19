@@ -1,5 +1,5 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
@@ -22,7 +22,9 @@ function NumberOfCases() {
       <CardContent>
         <section>
           <Typography variant="center" component="center">
-            <h3>Número de Casos</h3>
+            <h3 style={{ fontSize: '18px' }}>
+              Número de Casos
+            </h3>
           </Typography>
           <Typography variant="center" component="center">
             <h3>{numberOfCases}</h3>

@@ -63,7 +63,7 @@ const Filter = () => {
       </div>
       <input type='text' value={country} onChange={handleSearch}></input>{' '}
       <button onClick={submitSearch}>OK</button>
-      <h2>Casos confirmados por países:</h2>
+      <h2>Casos confirmados por países</h2>
       <div className='container-table'>
         {modal === 'Número de casos' ? (
           <table className='table-filter'>

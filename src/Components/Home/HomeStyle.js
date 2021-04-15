@@ -68,18 +68,18 @@ height: "100vh",
 overflow: "auto"
 },
 container: {
-paddingTop: theme.spacing(4),
+paddingTop: theme.spacing(1),
 paddingBottom: theme.spacing(4)
 },
 paper: {
-padding: theme.spacing(2),
+padding: theme.spacing(12),
 display: "flex",
 overflow: "auto",
 flexDirection: "column",
-border: "1px solid gray"
+border: "2px solid transparent"
 },
 fixedHeight: {
-height: 240
+height: 445
 }
 }));
 

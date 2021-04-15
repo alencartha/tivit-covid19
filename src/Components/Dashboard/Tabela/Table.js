@@ -1,81 +1,99 @@
-import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Typography from '@material-ui/core/Typography';
-import Pagination from '@material-ui/lab/Pagination';
-import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import SearchIcon from '@material-ui/icons/Search';
+/* eslint-disable no-lone-blocks */
+import { Paper } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import { useStyles } from "../../Home/HomeStyle";
+import clsx from "clsx";
+import "../../../App.css"
+
+const Filter = () => {
+  const [filterByCountry, setFilter] = useState([]);
+  // const [data, setData] = useState([]);
+  const [modal, setModal] = useState('Número de casos');
+  const classes = useStyles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+
+  useEffect(() => {
+    fetch('https://disease.sh/v3/covid-19/countries?yesterday=1&twoDaysAgo=0&sort=cases&allowNull=0', {
+      method: 'GET',
+      mode: 'cors',
+    })
+      .then((resp) => resp.json())
+      .then((json) => setFilter(json))
+      .catch((error) => console.log(error));
+  }, []);
+
+  const handleSelect = (e) => {
+    setModal(e.target.value);
+  };
 
 
-const useStyles = makeStyles((theme) => ({
-    seeMore: {
-        marginTop: theme.spacing(3)
-    },
-    root: {
-        '5 > 4 + 1': {
-          marginTop: theme.spacing(2),
-        },
-      },
-}));
+  return (
+    <>
+     
+      <h2>Informações específicas por País:</h2>
+      <div>
+          Filtrar por: <select value={modal} onChange={handleSelect} className='select'>
+          <option>Número de casos</option>
+          <option>Número de mortes</option>
+          <option>Número de recuperados</option>
+        </select>
+      </div> <br/>
+      <Paper className={fixedHeightPaper}>
 
-export default function Orders() {
-    const classes = useStyles();
-    const [page, setPage] = useState(1);
-    const handleChange = (event, value) => {
-      setPage(value);
-    };
-    const [data, setData] = useState([]);
+      <div className='container-table'>
+        {modal === 'Número de casos' ? (
+          <table className='table-filter'>
+            <tbody>
+              <tr>
+                <th className= "country-table">País</th>
+                <th className= "country-table">Total de Casos</th>
+              </tr>
+              {filterByCountry.map((data) => (
+                <tr>
+                    <td>{data.country}</td>
+                    <td>{(data.cases).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
 
+        ) : modal === 'Número de mortes' ? (
+          <table className='table-filter'>
+            <tbody>
+              <tr>
+                <th className= "country-table">País</th>
+                <th className= "country-table">Número de Mortes</th>
+              </tr>
+              {filterByCountry.map((data) => (
+                <tr>
+                  <td>{data.country}</td>
+                  <td>{(data.deaths).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : modal === 'Número de recuperados' ? (
+          <table className='table-filter'>
+            <tbody>
+              <tr>
+                <th className= "country-table">País</th>
+                <th className= "country-table">Número de Recuperados</th>
+              </tr>
+              {filterByCountry.map((data) => (
+                <tr>
+                  <td>{data.country}</td>
+                  <td>{(data.recovered).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <></>
+        )}
+      </div>
+      </Paper>
+      </>
+  );
+};
 
-
-    useEffect(() => {
-        fetch(
-            "https://disease.sh/v3/covid-19/countries?yesterday=1&twoDaysAgo=0&sort=cases&allowNull=0",
-            {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            }
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                const iten = data;
-                setData(iten);
-                console.log(iten);
-
-            })
-            .catch((error) => console.log("error", error));
-    }, [setData]);
-
-    return (
-        <React.Fragment>
-           <Input id="input-with-icon-adornment" startAdornment={
-            <InputAdornment position="start">
-                <SearchIcon />
-            </InputAdornment>}/>
-            <Table size="small">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>País</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody className={classes.root}>
-                        {data.map((itens) => (
-                            <TableRow>
-                        <TableCell>{itens.country}</TableCell>
-                        <TableCell>{itens.cases}</TableCell>
-                    </TableRow>
-                        ))} 
-                        <Typography>Page: {page}</Typography>
-                        <Pagination count={10} page={page} onChange={handleChange} />
-                </TableBody>
-            </Table>
-        </React.Fragment >
-    );
-}
+export default Filter;

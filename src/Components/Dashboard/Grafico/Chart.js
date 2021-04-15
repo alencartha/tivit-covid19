@@ -1,44 +1,50 @@
-import * as React from "react";
-import Paper from "@material-ui/core/Paper";
-import {
-  Chart,
-  BarSeries,
-  ArgumentAxis
-} from "@devexpress/dx-react-chart-material-ui";
+/* eslint-disable no-lone-blocks */
+import { Paper } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import { useStyles } from "../../Home/HomeStyle";
+import clsx from "clsx";
+import "../../../App.css";
+import "./charts.css";
 
-import { Animation } from "@devexpress/dx-react-chart";
+const Continent = () => {
+  const [filterByCountry, setFilter] = useState([]);
+  // const [data, setData] = useState([]);
+  const classes = useStyles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
-const data = [
-  { continent: "ÁFRICA", totalcases: 2.525 },
-  { continent: "ÁSIA", totalcases: 3.018 },
-  { continent: "EUROPA", totalcases: 3.682 },
-  { continent: "OCEANIA", totalcases: 4.44 },
-  { continent: "A. SUL", totalcases: 5.31 },
-  { continent: "A. NORTE", totalcases: 6.127 },
-  { continent: "ANTARTIDA", totalcases: 6.93 }
-];
+  useEffect(() => {
+    fetch('https://disease.sh/v3/covid-19/continents', {
+      method: 'GET',
+      mode: 'cors',
+    })
+      .then((resp) => resp.json())
+      .then((json) => setFilter(json))
+      .catch((error) => console.log(error));
+  }, []);
+  
+  return (
+      <div>
+      <Paper className={fixedHeightPaper}>
 
-export default class Demo extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data
-    };
-  }
-
-  render() {
-    const { data: chartData } = this.state;
-
-    return (
-      <Paper>
-        <Chart data={chartData}>
-          <ArgumentAxis />
-
-          <BarSeries valueField="totalcases" argumentField="continent" />
-          <Animation />
-        </Chart>
+      <div className='container-table'>
+        <table>
+          <tbody>
+            <tr>
+              <th>Continente</th>
+              <th className="data-continents">Número de Casos</th>
+            </tr>
+            {filterByCountry.map((data) => (
+              <tr className="data-continents">
+                <td className="data-continents">{data.continent}</td>
+                <td className="data-continents">{(data.recovered).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table> 
+      </div>
       </Paper>
-    );
-  }
-}
+      </div>
+  );
+};
+
+export default Continent;

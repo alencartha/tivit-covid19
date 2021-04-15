@@ -1,28 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
 
 function NumberOfRecovered() {
     const [numberOfRecovered, setRecovered] = useState([]);
-    const classes = useStyles();
 
     useEffect(() => {
         fetch('https://disease.sh/v3/covid-19/all', {
@@ -30,7 +13,7 @@ function NumberOfRecovered() {
           mode:"cors"
         })
           .then((resp) => resp.json())
-          .then((json) => setRecovered(json.cases))
+          .then((json) => setRecovered(json.recovered))
           .catch((error) => console.log(error));
       }, []);
     
@@ -38,7 +21,9 @@ function NumberOfRecovered() {
       <CardContent>
         <section className="number-of-death">
           <Typography variant="center" component="center">
-            <h3>Número de Recuperados:</h3>
+            <h3 style={{ fontSize: '18px' }}>
+              Número de Recuperados
+            </h3>
           </Typography>
           <Typography variant="center" component="center">
             <h3>{numberOfRecovered}</h3>

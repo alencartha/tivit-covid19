@@ -3,14 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 65px;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -27,6 +21,35 @@
 .App-link {
   color: #61dafb;
 }
+
+th.country-table {
+  text-align: left;
+}
+
+.makeStyles-container-13 {
+  background-color: #ebe5ac;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.MuiTypography-colorTextSecondary {
+  color: #50545e;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  background:rgb(139, 0, 0);
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(139, 0, 0);
+  border-radius: 30px;
+}
+
 
 @keyframes App-logo-spin {
   from {
