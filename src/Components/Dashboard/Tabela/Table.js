@@ -2,10 +2,8 @@
 import { Paper } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
 import { useStyles } from "../../Home/HomeStyle";
-import InputAdornment from '@material-ui/core/InputAdornment';
-import SearchIcon from '@material-ui/icons/Search';
 import clsx from "clsx";
-
+import "../../../App.css"
 
 const Filter = () => {
   const [filterByCountry, setFilter] = useState([]);
@@ -96,29 +94,23 @@ const Filter = () => {
 init()*/}
   return (
     <>
-     <div>
-        <h2>Filtrar por:</h2>
-        <select value={modal} onChange={handleSelect} className='select'>
+     
+      <h2>Informações específicas por País:</h2>
+      <div>
+          Filtrar por: <select value={modal} onChange={handleSelect} className='select'>
           <option>Número de casos</option>
           <option>Número de mortes</option>
           <option>Número de recuperados</option>
         </select>
-      </div>
-      <br/>
-      
-
-      <h2>Casos confirmados por países:</h2>
+      </div> <br/>
       <Paper className={fixedHeightPaper}>
 
       <div className='container-table'>
-            <InputAdornment position="start">
-                <SearchIcon />
-            </InputAdornment>
         {modal === 'Número de casos' ? (
           <table className='table-filter'>
             <tbody>
               <tr>
-                <th>País</th>
+                <th className= "country-table">País</th>
                 <th>Total de Casos</th>
               </tr>
               {filterByCountry.map((data) => (
@@ -134,7 +126,7 @@ init()*/}
           <table className='table-filter'>
             <tbody>
               <tr>
-                <th>País</th>
+                <th className= "country-table">País</th>
                 <th>Número de Mortes</th>
               </tr>
               {filterByCountry.map((data) => (
@@ -149,7 +141,7 @@ init()*/}
           <table className='table-filter'>
             <tbody>
               <tr>
-                <th>País</th>
+                <th className= "country-table">País</th>
                 <th>Número de Recuperados</th>
               </tr>
               {filterByCountry.map((data) => (
