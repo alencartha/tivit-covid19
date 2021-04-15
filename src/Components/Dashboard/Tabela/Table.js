@@ -62,7 +62,7 @@ const Filter = () => {
             <tbody>
               <tr>
                 <th className= "country-table">País</th>
-                <th>Número de Mortes</th>
+                <th className= "country-table">Número de Mortes</th>
               </tr>
               {filterByCountry.map((data) => (
                 <tr>
@@ -77,7 +77,7 @@ const Filter = () => {
             <tbody>
               <tr>
                 <th className= "country-table">País</th>
-                <th>Número de Recuperados</th>
+                <th className= "country-table">Número de Recuperados</th>
               </tr>
               {filterByCountry.map((data) => (
                 <tr>
