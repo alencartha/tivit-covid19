@@ -6,7 +6,6 @@ import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -17,6 +16,7 @@ import { useStyles } from "./HomeStyle";
 import { Copyright } from "../Copyright/Copyright";
 import Graphic from "../Dashboard/Grafico/Chart"
 import Table1 from "../Dashboard/Tabela/Table"
+import Logo from "../../Img/index"
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -29,17 +29,11 @@ export default function Dashboard() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
+        style={{ background: '#8B0000', border:'1px solid #ccc'}}
         position="absolute"
       >
         <Toolbar>
-          <Typography
-            component="h1"
-            variant="h6"
-            color="inherit"
-            noWrap
-          >
-            Dashboard
-          </Typography>
+          <Logo />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -47,24 +41,23 @@ export default function Dashboard() {
       >
       </Drawer>
       <main className={classes.content}>
+        <Container maxWidth="lg" className={classes.container}>
         <div className={classes.appBarSpacer} />
         <h1><b>COVID-19</b></h1>
-        <p>`Números relacionados a quantidade de casos identificados até  o dia:{date}/{month}/{year}`</p>
-
-        <Container maxWidth="lg" className={classes.container}>
+        <p>Números relacionados à quantidade de casos identificados até  o dia:{date}/{month}/{year}.</p><br/>
               <p>Informações gerais</p>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={2} lg={2}>
+            <Grid style= {{margin: '10px'}}>
               <Paper>
                 <NumberOfCases />
               </Paper>
             </Grid>
-            <Grid item xs={12} md={2} lg={2}>
+            <Grid style= {{margin: '10px'}}>
               <Paper>
                 <NumberOfDeath />
               </Paper>
             </Grid>
-            <Grid item xs={12} md={2} lg={2}>
+            <Grid style= {{margin: '10px'}}>
               <Paper>
                 <NumberOfRecovered />
               </Paper>
