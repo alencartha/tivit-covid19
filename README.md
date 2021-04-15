@@ -51,9 +51,7 @@ Se quiser saber um pouco mais sobre o planejamento, basta acessar esse [link](ht
 
 ### 3.2 Prótipos
 
-O projeto foi desenvolvido utilizando protótipos de média fidelidade fornecidos pelos colaboradores da TIVIT.
-
-![prototipo-1](src/Img/Desafio_TivitTF_SAP005.pdf)
+O projeto foi desenvolvido utilizando protótipos de média fidelidade fornecidos pelos colaboradores da TIVIT. Para ter acesso ao prótipo e todas as informações sobre o desafio, acesse [AQUI](src/Img/Desafio_TivitTF_SAP005.pdf)
 
 
 ## 4. Habilidades Desenvolvidas :dart:

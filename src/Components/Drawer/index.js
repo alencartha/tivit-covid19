@@ -225,7 +225,7 @@ export default function ScrollableTabsButtonForce() {
       <TabPanel value={value} index={2}>
         <h3 style={{textAlign: "center"}}>Desafio TIVIT</h3>
 
-        <h4> 1 Contexto</h4>
+        <h4>Contexto</h4>
         <p style={{textAlign: "justify"}}>
           A evolução da nossa capacidade computacional nos permite processar
           grandes volumes de dados. No entanto, é fundamental que essas
@@ -240,7 +240,7 @@ export default function ScrollableTabsButtonForce() {
           clientes.
         </p>
         <br />
-        <h4>2 O desafio</h4>
+        <h4>O desafio</h4>
         <p style={{textAlign: "justify"}}>
           Com a evolução da Covid-19 no mundo, uma empresa especializada na
           distribuição de materiais hospitalares precisa ter algumas informações
@@ -260,7 +260,7 @@ export default function ScrollableTabsButtonForce() {
           Material-UI pois é o que utilizamos no nosso dia-a-dia, mas fiquem à
           vontade para utilizar outra ferramenta :){" "}
         </p>
-        <h4>3 Informações do dashboard</h4>
+        <h4>Informações do dashboard</h4>
         <p style={{textAlign: "justify"}}>
           1. Os quadrinhos tem as informações de número de casos, número de
           mortes, número de infectados recuperados e data da última atualização
