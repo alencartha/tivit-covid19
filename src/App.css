@@ -26,6 +26,15 @@ th.country-table {
   padding-right: 180px;
 }
 
+.makeStyles-container-13 {
+  background-color: #ebe5ac;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.MuiTypography-colorTextSecondary {
+  color: #50545e;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
