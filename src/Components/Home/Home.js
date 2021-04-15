@@ -44,9 +44,13 @@ export default function Dashboard() {
       <main className={classes.content}>
         <Container maxWidth="lg" className={classes.container}>
         <div className={classes.appBarSpacer} />
-        <h1><b>COVID-19</b></h1>
-        <p>Números relacionados à quantidade de casos identificados até  o dia:{date}/{month}/{year}.</p><br/>
-              <p>Informações gerais</p>
+        <h1 style={{ fontSize: '35px' }}>
+          <b>COVID-19</b>
+        </h1>
+        <p style={{ fontSize: '18px' }}>
+          Números relacionados à quantidade de casos identificados até o dia: <b> {date}/{month}/{year}</b>.</p><br/>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                Informações gerais</p>
           <Grid container spacing={3}>
             <Grid style= {{margin: '10px'}}>
               <Paper>
@@ -72,7 +76,9 @@ export default function Dashboard() {
             <Paper><Plus /></Paper>
             </Grid>
             <Grid item xs={12} md={10} lg={6}>
-              <p>Casos confirmados por Continente</p>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                Casos confirmados por Continente
+              </p>
               <Paper><Graphic /></Paper>
             </Grid>
           </Grid>

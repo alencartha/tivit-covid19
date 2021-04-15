@@ -22,7 +22,9 @@ function NumberOfCases() {
       <CardContent>
         <section>
           <Typography variant="center" component="center">
-            <h3>Número de Casos</h3>
+            <h3 style={{ fontSize: '18px' }}>
+              Número de Casos
+            </h3>
           </Typography>
           <Typography variant="center" component="center">
             <h3>{numberOfCases}</h3>

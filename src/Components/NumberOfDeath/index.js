@@ -21,7 +21,9 @@ function NumberOfDeath() {
       <CardContent>
         <section className="number-of-death">
           <Typography variant="center" component="center">
-            <h3>Número de Mortes:</h3>
+            <h3 style={{ fontSize: '18px' }}>
+              Número de Mortes
+            </h3>
           </Typography>
           <Typography variant="center" component="center">
             <h3>{numberOfDeath}</h3>
