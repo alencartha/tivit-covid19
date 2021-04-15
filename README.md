@@ -32,11 +32,13 @@ O desafio foi proposto pelos colaboradores da TIVIT: "Avisualização dos dados 
 Esta aplicação foi pensada para que os colaborares da empresa possam utilizar intuitivamente os recursos disponíveis e que ao mesmo tempo facilite o acesso aos dados referente ao Covid para tomada de decisões estratégicas. Acessando o site da [Data-Cov](https://tivit-covid19.vercel.app/), será possível verificar os dados por país ou continente.
 
 
-![Tela Dashboard](colocar aqui)
+![Tela Dashboard](src/Img/pag.jpeg)
 
 ---
 
 ## 2. Planejamento Ágil :memo:
+
+![Tela Dashboard](src/Img/trello.jpeg)
 
 Utilizou-se a ferramenta _Trello_ para planejar as ideais e organizar as tarefas.
 Se quiser saber um pouco mais sobre o planejamento, basta acessar esse [link](https://trello.com/b/SKLkk6EW/desafio-tivit).
@@ -49,9 +51,9 @@ Se quiser saber um pouco mais sobre o planejamento, basta acessar esse [link](ht
 
 ### 3.2 Prótipos
 
-O projeto foi desenvolvido utilizando protótipos de baixa fidelidade e no projeto foram utilizadas fotos de alta resolução.
+O projeto foi desenvolvido utilizando protótipos de média fidelidade fornecidos pelos colaboradores da TIVIT.
 
-![prototipo-1](link do Prototipo)
+![prototipo-1](src/Img/Desafio_TivitTF_SAP005.pdf)
 
 
 ## 4. Habilidades Desenvolvidas :dart:
