@@ -26,72 +26,7 @@ const Filter = () => {
     setModal(e.target.value);
   };
 
-{ /* let perPage = 5;
-  const state = {
-    page: 1,
-    perPage: perPage,
-    totalPage: Math.ceil(filterByCountry.length/perPage),
-  }
 
-  const html = {
-    get(element) {
-      return document.querySelector(element)
-    }
-  }
-
-  const controls = {
-    next() {
-      state.page++
-      const lastPage = state.page > state.totalPage;
-      if(lastPage){
-        state.page--
-      }
-    },
-    prev() {
-      state.page--
-      if(state.page < 1) {
-        state.page++
-      }
-    },
-    goTo() {
-      html.get('.fist').addEventListener('click', () => {
-        controls.goTo(1)
-        update()
-      })
-      html.get('.last').addEventListener('click', () => {
-        controls.goTo(state.totalPage)
-        update()
-      })
-      html.get('.next').addEventListener('click', () => {
-        controls.next()
-        update()
-      })
-      html.get('.prev').addEventListener('click', () => {
-        controls.prev()
-        update()
-      })
-    },
-  }
-
-  const list = {
-    create(item) {},
-    update() {
-      let page = state.page -1;
-      let start = page * state.perPage;
-      let end = start + state.perPage;
-      const paginateItems = filterByCountry.slice(start, end) // Limitar
-      //setData(paginateItems)
-      console.log(data);
-    }
-  }
-  const update = () => {
-    list.update()
-  }
-
-  const init = () => {
-    list.update()
-  }
-init()*/}
   return (
     <>
      
@@ -111,7 +46,7 @@ init()*/}
             <tbody>
               <tr>
                 <th className= "country-table">País</th>
-                <th>Total de Casos</th>
+                <th className= "country-table">Total de Casos</th>
               </tr>
               {filterByCountry.map((data) => (
                 <tr>
