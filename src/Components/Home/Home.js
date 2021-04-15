@@ -52,30 +52,35 @@ export default function Dashboard() {
               <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
                 Informações gerais</p>
           <Grid container spacing={3}>
-            <Grid style= {{margin: '10px'}}>
+            <Grid item xs={12} md={10} lg={2}>
               <Paper>
                 <NumberOfCases />
               </Paper>
             </Grid>
-            <Grid style= {{margin: '10px'}}>
+            <Grid item xs={12} md={10} lg={2}>
               <Paper>
                 <NumberOfDeath />
               </Paper>
             </Grid>
-            <Grid style= {{margin: '10px'}}>
+            <Grid item xs={12} md={10} lg={2}>
               <Paper>
                 <NumberOfRecovered />
               </Paper>
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+              <Grid item xs={12} md={10} lg={6}>
+                <Paper><Plus /></Paper>
+              </Grid>
             </Grid>
+            {/* <Grid item xs={12} md={4} lg={3}>
+            </Grid> */}
+          <Grid container spacing={3}>
             <Grid item xs={12} md={10} lg={6}>
                 <Table1 />
             </Grid>
-            <Grid item xs={12} md={10} lg={5}>
-            <Paper><Plus /></Paper>
-            </Grid>
+            <Grid item xs={12} md={10} lg={6}>
+            <h2>Informações específicas por Continente:</h2>
               <Paper><Graphic /></Paper>
+            </Grid>
           </Grid>
           <Box pt={4}>
             <Copyright />

@@ -22,9 +22,6 @@ const Continent = () => {
   }, []);
   
   return (
-    <>
-     
-      <h2>Informações específicas por Continente:</h2>
       <div>
       <Paper className={fixedHeightPaper}>
 
@@ -39,7 +36,6 @@ const Continent = () => {
       </div>
       </Paper>
       </div>
-    </>
   );
 };
 
