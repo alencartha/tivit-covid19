@@ -71,10 +71,7 @@ export default function Dashboard() {
             <Grid item xs={12} md={10} lg={5}>
             <Paper><Plus /></Paper>
             </Grid>
-            <Grid item xs={12} md={10} lg={6}>
-              <p>Casos confirmados por Continente</p>
               <Paper><Graphic /></Paper>
-            </Grid>
           </Grid>
           <Box pt={4}>
             <Copyright />
