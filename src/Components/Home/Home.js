@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import clsx from "clsx";
-import CssBaseline from "@material-ui/core/CssBaseline";
+//import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
@@ -28,7 +28,7 @@ export default function Dashboard() {
   const year = newDate.getFullYear();
   return (
     <div className={classes.root}>
-      <CssBaseline />
+     {/*  <CssBaseline /> */}
       <AppBar
         style={{ background: '#8B0000', border:'1px solid #ccc'}}
         position="absolute"
