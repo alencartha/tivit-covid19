@@ -47,8 +47,8 @@ export default function Dashboard() {
           <b>COVID-19</b>
         </h1>
         <p style={{ fontSize: '18px' }}>
-          Números relacionados à quantidade de casos identificados até o dia: {date}/{month}/{year}.</p><br/>
-              <p style={{ fontSize: '25px', fontWeight: 'bold' }}>
+          Números relacionados à quantidade de casos identificados até o dia: <b> {date}/{month}/{year}</b>.</p><br/>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
                 Informações gerais</p>
           <Grid container spacing={3}>
             <Grid style= {{margin: '10px'}}>
@@ -72,7 +72,9 @@ export default function Dashboard() {
                 <Table1 />
             </Grid>
             <Grid item xs={12} md={10} lg={6}>
-              <p>Casos confirmados por Continente</p>
+              <p style={{ fontSize: '20px', fontWeight: 'bold' }}>
+                Casos confirmados por Continente
+              </p>
               <Paper><Graphic /></Paper>
             </Grid>
           </Grid>
