@@ -15,7 +15,7 @@ const Filter = () => {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   useEffect(() => {
-    fetch('https://disease.sh/v3/covid-19/jhucsse', {
+    fetch('https://disease.sh/v3/covid-19/countries?yesterday=1&twoDaysAgo=0&sort=cases&allowNull=0', {
       method: 'GET',
       mode: 'cors',
     })
@@ -124,7 +124,7 @@ init()*/}
               {filterByCountry.map((data) => (
                 <tr>
                     <td>{data.country}</td>
-                    <td>{data.stats.confirmed}</td>
+                    <td>{(data.cases).toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -140,7 +140,7 @@ init()*/}
               {filterByCountry.map((data) => (
                 <tr>
                   <td>{data.country}</td>
-                  <td>{data.stats.deaths}</td>
+                  <td>{(data.deaths).toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -155,7 +155,7 @@ init()*/}
               {filterByCountry.map((data) => (
                 <tr>
                   <td>{data.country}</td>
-                  <td>{data.stats.recovered}</td>
+                  <td>{(data.recovered).toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -164,15 +164,6 @@ init()*/}
           <></>
         )}
       </div>
-      <div class="controls">
-            <div class="first">&#171;</div>
-            <div class="prev">&lt;</div>
-            <div class="numbers">
-                <div>1</div>
-            </div>
-            <div class="next">&gt;</div>
-            <div class="last">&#187;</div>
-        </div>
       </Paper>
       </>
   );
