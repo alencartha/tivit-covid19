@@ -19,6 +19,7 @@ function TabPanel(props) {
       role="tabpanel"
       hidden={value !== index}
       id={`scrollable-force-tabpanel-${index}`}
+      position="relative"
       aria-labelledby={`scrollable-force-tab-${index}`}
       {...other}
     >
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
     flexDirection: "column",
     border: "2px solid transparent",
-    display: "flex"
+    height: "300px",
 
   }
 }));

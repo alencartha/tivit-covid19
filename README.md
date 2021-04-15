@@ -1,9 +1,9 @@
-![Data-cov](src/img/Data-cov.png)
+![Data-cov](src/Img/Data-cov.png)
 
 Esse projeto foi realizado para o Talent Fest- turma SAP005 - finalizando o Bootcamp da Laboratoria.
 
 [**Conheça a Data-cov :computer:**] (https://tivit-covid19.vercel.app/)
-> Status do Projeto: concluído :gear:
+> Status do Projeto: concluído :heavy_check_mark:
 
 ---
 
@@ -78,6 +78,14 @@ O projeto foi desenvolvido utilizando protótipos de baixa fidelidade e no proje
 
 ## 5. Desenvolvedoras :computer:
 
- 
+#### :octocat: [**Edilene Fernandes**](https://github.com/edilenefern) 
+
+#### :octocat: [**Juliane Cristina**](https://github.com/Juliane-C) 
+
+#### :octocat: [**Luciana Pereira**](https://github.com/luciana-pereira) 
+
+#### :octocat: [**Mairã Soares**](https://github.com/MairaSoares)
+
+#### :octocat: [**Thaís Alencar**](https://github.com/alencartha) 
 
 ---
