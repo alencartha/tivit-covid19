@@ -17,6 +17,7 @@ import { Copyright } from "../Copyright/Copyright";
 import Graphic from "../Dashboard/Grafico/Chart"
 import Table1 from "../Dashboard/Tabela/Table"
 import Logo from "../../Img/index"
+import Plus from "../Drawer/index"
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -66,6 +67,9 @@ export default function Dashboard() {
             </Grid>
             <Grid item xs={12} md={10} lg={6}>
                 <Table1 />
+            </Grid>
+            <Grid item xs={12} md={10} lg={5}>
+            <Paper><Plus /></Paper>
             </Grid>
             <Grid item xs={12} md={10} lg={6}>
               <p>Casos confirmados por Continente</p>
