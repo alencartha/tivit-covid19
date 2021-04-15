@@ -17,6 +17,7 @@ import { useStyles } from "./HomeStyle";
 import { Copyright } from "../Copyright/Copyright";
 import Graphic from "../Dashboard/Grafico/Chart"
 import Table1 from "../Dashboard/Tabela/Table"
+import Logo from "../Logo/Logo"
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -40,7 +41,9 @@ export default function Dashboard() {
             className={classes.title}
           >
             Dashboard
-          </Typography>
+
+         </Typography>
+         <Logo />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -77,7 +80,7 @@ export default function Dashboard() {
             </Grid>
             <Grid item xs={12} md={10} lg={6}>
               <p>Casos confirmados por Continente</p>
-              <Paper><Graphic /></Paper>
+              <Paper className={fixedHeightPaper}><Graphic /></Paper>
             </Grid>
           </Grid>
           <Box pt={4}>

@@ -1,44 +1,68 @@
-import * as React from "react";
-import Paper from "@material-ui/core/Paper";
-import {
-  Chart,
-  BarSeries,
-  ArgumentAxis
-} from "@devexpress/dx-react-chart-material-ui";
+import React, {useEffect, useState} from 'react';
+import { useTheme } from '@material-ui/core/styles';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 
-import { Animation } from "@devexpress/dx-react-chart";
+export default function Chart() {
+  const [dataContinent, setContinent] = useState("");
+  const [dataCases, setCases] = useState([])
 
-const data = [
-  { continent: "ÁFRICA", totalcases: 2.525 },
-  { continent: "ÁSIA", totalcases: 3.018 },
-  { continent: "EUROPA", totalcases: 3.682 },
-  { continent: "OCEANIA", totalcases: 4.44 },
-  { continent: "A. SUL", totalcases: 5.31 },
-  { continent: "A. NORTE", totalcases: 6.127 },
-  { continent: "ANTARTIDA", totalcases: 6.93 }
-];
+  const theme = useTheme();
 
-export default class Demo extends React.PureComponent {
-  constructor(props) {
-    super(props);
+  useEffect(() => {
+    fetch('https://disease.sh/v3/covid-19/continents', {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((resp) => resp.text())
+      .then((json) => {
+        const data = json.continent;
+        //const dataContinent = data.continent;
+        //const dataCases = data.cases;
+        //setContinent(dataContinent);
+        //setCases(dataCases);
+        console.log(data)
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
-    this.state = {
-      data
-    };
+  function createData(continent, cases) {
+    return { continent, cases };
   }
+  
+  const data = [
+    createData(`${dataContinent}` ),
+  ];
 
-  render() {
-    const { data: chartData } = this.state;
-
-    return (
-      <Paper>
-        <Chart data={chartData}>
-          <ArgumentAxis />
-
-          <BarSeries valueField="totalcases" argumentField="continent" />
-          <Animation />
-        </Chart>
-      </Paper>
-    );
-  }
+  console.log(data)
+  return (
+    <React.Fragment>
+      <h2>Today</h2>
+      <ResponsiveContainer>
+        <LineChart
+          data={data}
+          margin={{
+            top: 16,
+            right: 16,
+            bottom: 0,
+            left: 24,
+          }}
+        >
+          <XAxis dataKey="time" stroke={theme.palette.text.secondary} />
+          <YAxis stroke={theme.palette.text.secondary}>
+            <Label
+              angle={270}
+              position="left"
+              style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
+            >
+              Sales ($)
+            </Label>
+          </YAxis>
+          <Line type="monotone" dataKey="amount" stroke={theme.palette.primary.main} dot={false} />
+        </LineChart>
+      </ResponsiveContainer>
+    </React.Fragment>
+  );
 }

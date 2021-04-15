@@ -164,6 +164,8 @@ init()*/}
           <></>
         )}
       </div>
+      {/**
+       * 
       <div class="controls">
             <div class="first">&#171;</div>
             <div class="prev">&lt;</div>
@@ -173,6 +175,7 @@ init()*/}
             <div class="next">&gt;</div>
             <div class="last">&#187;</div>
         </div>
+       */}
       </Paper>
       </>
   );
