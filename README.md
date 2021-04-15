@@ -10,7 +10,7 @@ Esse projeto foi realizado para o Talent Fest- turma SAP005 - finalizando o Boot
 ## Índice
 
 - [1. Apresentação do Projeto](#1-apresentação-do-projeto)
-  - [1.2 Conhecendo a interface](#1.1-conhecendo-a-interface)
+  - [1.1 Conhecendo a interface](#1.1-conhecendo-a-interface)
 - [2. Planejamento Ágil](#2-planejamento-agil)
 - [3. Desenvolvimento](#4-desenvolvimento)
   - [3.1 Critérios mínimos de aceitação do projeto](#3.1-problema-a-ser-resolvido) 
@@ -27,7 +27,7 @@ O desafio foi proposto pelos colaboradores da TIVIT: "Avisualização dos dados 
 
 
 
-### 1.3 Conhecendo um pouco da interface
+### 1.1 Conhecendo um pouco da interface
 
 Esta aplicação foi pensada para que os colaborares da empresa possam utilizar intuitivamente os recursos disponíveis e que ao mesmo tempo facilite o acesso aos dados referente ao Covid para tomada de decisões estratégicas. Acessando o site da [Data-Cov](https://tivit-covid19.vercel.app/), será possível verificar os dados por país ou continente.
 
